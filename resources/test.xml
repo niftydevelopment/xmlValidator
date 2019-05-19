@@ -1,5 +1,37 @@
-<a>
-    <b>
-        <c>123</c>
-    </b>
-</a>
+<ns4:Dom xmlns="http://dom.se/dv/handling/dom/v1" xmlns:ns5="http://www.w3.org/2000/09/xmldsig#" xmlns:ns2="http://dom.se/dv/handling/base/v1" xmlns:ns4="http://dom.se/dv/handling/dom/v2" xmlns:ns3="http://dom.se/dv/handling/base/v2">
+<ns3:HandlingId>123456789</ns3:HandlingId>
+<ns3:Handlingstyp>
+<ns3:TypId>DOM_TR</ns3:TypId>
+<ns3:Version>1.0</ns3:Version>
+</ns3:Handlingstyp>
+<ns4:Avgorande>
+<ns4:AvgorandeId>2</ns4:AvgorandeId>
+<ns4:Domstol>
+<ns4:Namn>Dummy</ns4:Namn>
+<ns4:Besoksadress>Skeppsbrogatan 41</ns4:Besoksadress>
+<ns4:Postnummer>971 26 </ns4:Postnummer>
+<ns4:Postort>Luleå</ns4:Postort>
+<ns4:Telefonnummer>0920-29 55 00</ns4:Telefonnummer>
+<ns4:Faxnummer>0920-29 55 01</ns4:Faxnummer>
+<ns4:Epost>jonkopings.tingsratt@dom.se</ns4:Epost>
+<ns4:Hemsida>www.jonkopingstingsratt.domstol.se</ns4:Hemsida>
+</ns4:Domstol>
+<ns4:AnsvarigDomareList>
+
+    <ns4:AnsvarigDomare>
+    <ns4:Id>132</ns4:Id>
+    <ns4:Namn>Daniel Lindblom</ns4:Namn>
+    </ns4:AnsvarigDomare>
+
+
+    <ns4:AnsvarigDomare>
+    <ns4:Id>456</ns4:Id>
+    <ns4:Namn>Daniel Lindblom </ns4:Namn>
+    </ns4:AnsvarigDomare>
+
+</ns4:AnsvarigDomareList>
+<ns4:Datum>2018-12-24</ns4:Datum>
+<ns4:Plats>Niklas Balkong</ns4:Plats>
+<ns4:Sakentext>TODO</ns4:Sakentext>
+</ns4:Avgorande>
+</ns4:Dom>

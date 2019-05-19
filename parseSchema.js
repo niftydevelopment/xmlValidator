@@ -5,6 +5,7 @@ var fs = require('fs')
 
 
 let parse = (filePath) => {
+
     return new Promise((res, rej) => {
 
         let schema = [];
@@ -19,10 +20,10 @@ let parse = (filePath) => {
                     'lineinSchema': lineinSchema++,
                     'error': false,
                     'errorDesc': null,
-                    'from': s_t[0],
-                    'to': s_t[1]
+                    'fromPath': s_t[0],
+                    'toPath': s_t[1]
                 }
-    
+
                 let dups = schema.find(e => {
                     return e.from == s_t[0] || e.to == s_t[1];
                 });
@@ -35,11 +36,9 @@ let parse = (filePath) => {
                 schema.push(matchDesc);
             })
                 .on('error', function (err) {
-                    console.log('Error while reading file.', err);
                     rej(err);
                 })
                 .on('end', function () {
-                    console.log('Read entire file.');
                     res(schema);
                 })
             );

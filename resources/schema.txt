@@ -1,2 +1,4 @@
+a.b.c->dom.handlingid
 a.b.c->a.b.c
-a.b.c->a.b.q
+a.b.n->dom.avgorande.domstol.namn
+a.b.q->dom.avgorande.ansvarigdomarelist.ansvarigdomare.0.namn

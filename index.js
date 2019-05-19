@@ -1,39 +1,26 @@
 let fs = require('fs');
-var objectPath = require("object-path");
 
 let parseSchema = require('./parseSchema');
 let parseXml = require('./parseXml');
+let validation = require('./validation');
 
+let comparison = {
+    schema: null,
+    result: null,
+    source: null
+}
 
+parseSchema.parse('./resources/schema.txt').then(result => {
+    comparison.schema = result;
+    return parseXml.parseXml('./resources/test.xml');
+}).then(target => {
+    comparison.target = target;
+    comparison.source = JSON.parse(fs.readFileSync('./resources/mq.json', 'utf8'));
 
-parseSchema.parse('./resources/schema.txt').then(schema => {
+    validation.validate(comparison);
 
-    let resultat;
+    let x = comparison.schema.filter(e => e.result);
 
-    parseXml.parseXml(fs.readFileSync('./resources/test.xml')).then(xml => {
+    console.log('--->', x);
 
-        resultat = JSON.parse(fs.readFileSync('./resources/resultat.json', 'utf8'));
-    
-        schema.forEach( e => {
-            let source = objectPath.get(xml, e.from);
-            let target = objectPath.get(resultat, e.to);
-
-            if (!source || !target) {
-                e.error = "Kunde inte hitta värdet";
-            } else {
-                source = source + '';
-                target = target + '';
-            }
-
-            e.result = source === target;
-            e.expected = source;
-            e.actual = target;
-            
-        });
-
-        console.log(schema);
-    });
-    
 });
-
-
